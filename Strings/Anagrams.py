@@ -10,18 +10,39 @@ class Anagrams:
         self.given_strings_array = []
         self.anagrams = []
 
+    '''
+            @func        : for mapping matched string into dict
+            @params      : NONE
+            @operations  : calling print_results function 
+            @return      : NONE
+    '''
     def map_the_strings(self):
         for cur_indx, ele in enumerate(self.given_strings_array):
+            # sort the string
             sorted_string = ''.join(sorted(ele))
             if sorted_string in self.map_word_indexs.keys():
                 self.map_word_indexs[sorted_string].append(cur_indx)
             else:
                 self.map_word_indexs[sorted_string] = [cur_indx]
         self.print_results()
+
+
+    '''
+        @func        : for getting inputs
+        @params      : NONE
+        @operations  : calling map_the_strings function 
+        @return      : NONE
+    '''
     def insert_strings(self):
         self.given_strings_array = list(map(str, input("Please enter words seperated by space:\n").split()))
         self.map_the_strings()
 
+    '''
+        @func        : for displaying results
+        @params      : NONE
+        @operations  : NONE
+        @return      : NONE
+    '''
     def print_results(self):
         for item in self.map_word_indexs.keys():
             # only matched results
