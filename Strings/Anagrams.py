@@ -34,5 +34,12 @@ class Anagrams:
                 print('No anagrams for word: ', item)
         # Finally print the results
         print(self.anagrams)
+
+# creating the object
 anagrams_object = Anagrams()
+'''
+    # calling the function
+    # input  = cat dog god tac
+    # output = [['cat', 'tac'], ['dog', 'god']] 
+'''
 anagrams_object.insert_strings()
