@@ -10,25 +10,9 @@ class Tree:
 
 
 class BinarySearchTree:
-
-    def Preodrer(self,root):
-        if root:
-            print(root.data)
-            self.Preodrer(root.left)
-            self.Preodrer(root.right)
-
-    def inodrer(self,root):
-        if root:
-            self.inodrer(root.left)
-            print(root.data)
-            self.inodrer(root.right)
-
-    def Postodrer(self,root):
-        if root:
-            self.Postodrer(root.left)
-            self.Postodrer(root.right)
-            print(root.data)
-
+    def __init__(self):
+        self.problem_link = 'https://leetcode.com/problems/invert-binary-tree/'
+        self.author = 'Trinath Reddy'
 
     def LevelOrder(self,root):
         # height = self.Height(root)\
@@ -49,6 +33,53 @@ class BinarySearchTree:
                 levelOrderQueue.append(node.left)
             if node.right is not None:
                 levelOrderQueue.append(node.right)
+
+    def inverseTree(self,root):
+
+        ''' Solution one '''
+        # check whether root is none
+        if root == None:
+            return root
+        # either left flow towards leaf node (deep of leaf)
+        if root.left is not None:
+            self.invertTree(root.left)
+
+        # either right flow towards leaf node (deep of leaf)
+        if root.right is not None:
+            self.invertTree(root.right)
+
+        # Finally swapp
+        temp = root.right
+        root.right = root.left
+        root.left = temp
+        # return root
+        return root
+
+        ''' Solution two  '''
+        # check whether root is none
+        # if root == None:
+        #     return root
+        #
+        # # either right flow towards leaf node (deep of leaf)
+        # if root.right is not None:
+        #     self.invertTree(root.right)
+        # # either left flow towards leaf node (deep of leaf)
+        # if root.left is not None:
+        #     self.invertTree(root.left)
+        #
+        # # Finally swapp
+        # temp = root.right
+        # root.right = root.left
+        # root.left = temp
+        # # return root
+        # return root
+
+        ''' Solution Three  '''
+        # if root is not None:
+        #     root.left, root.right = self.invertTree(root.right), \
+        #                             self.invertTree(root.left)
+        #
+        # return root
 
     def Height(self,root):
         if root is None:
@@ -83,23 +114,6 @@ class BinarySearchTree:
             current = current.left
 
         return current
-
-
-    def isBinarySearchTree(self,node, left = None, right =None):
-        current = node
-        #base condition
-        if(current == None):
-            return True
-
-        #left condition
-        if(left !=None and left.data >current.data):
-            return False
-
-        #right condition
-        if(right !=None and current.data > right.data):
-            return False
-
-        return self.isBinarySearchTree(current.left, left, right) and self.isBinarySearchTree(current.right, left, right)
 
 
     def deletenode(self, root, key):
@@ -147,33 +161,27 @@ class BinarySearchTree:
 
 
 
-root =  Tree(50)
+root =  Tree(4)
 tri = BinarySearchTree()
-node = Tree(30)
+node = Tree(2)
 tri.insert(root, node)
-node = Tree(20)
+node = Tree(7)
 tri.insert(root, node)
-node = Tree(40)
+node = Tree(1)
 tri.insert(root, node)
-node = Tree(70)
+node = Tree(3)
 tri.insert(root, node)
-node = Tree(60)
+node = Tree(6)
 tri.insert(root, node)
-node = Tree(80)
+node = Tree(9)
 tri.insert(root, node)
-node = Tree(90)
-tri.insert(root, node)
-node = Tree(100)
-tri.insert(root, node)
-print("PreOrder:")
-tri.Preodrer(root)
-print("Inorder:")
-tri.inodrer(root)
-print("PostOrder:")
-tri.Postodrer(root)
+
 tree_height = tri.Height(root)
 print("Height is " ,tree_height)
+# print("LevelOrder:")
+# tri.LevelOrder(root)
+print("InverseTree:")
+tri.inverseTree(root)
 print("LevelOrder:")
 tri.LevelOrder(root)
-print("is BST?")
-print(tri.isBinarySearchTree(root))
+
