@@ -5,10 +5,6 @@ class Tree:
         self.right = right
 
 
-
-
-
-
 class BinarySearchTree:
 
     def Preodrer(self,root):
@@ -148,9 +144,11 @@ class BinarySearchTree:
 
 
 root =  Tree(50)
+print(type(root))
 tri = BinarySearchTree()
 node = Tree(30)
 tri.insert(root, node)
+
 node = Tree(20)
 tri.insert(root, node)
 node = Tree(40)

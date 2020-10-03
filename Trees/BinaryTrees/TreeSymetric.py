@@ -25,7 +25,7 @@ def isMirror(root1, root2):
         of the right tree have to be mirror images 
         3 - right subtree of left tree and left subtree 
         of right tree have to be mirror images 
-    """
+    """-inorder-predecessor
     if (root1 is not None and root2 is not None):
         if root1.key == root2.key:
             return (isMirror(root1.left, root2.right) and
