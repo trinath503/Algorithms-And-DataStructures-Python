@@ -1,4 +1,4 @@
-class TripplingofWater:
+class TrapplingofWater:
     def __int__(self):
         self.description = ''
 
@@ -56,7 +56,7 @@ class TripplingofWater:
 
 
 
-c = TripplingofWater()
+c = TrapplingofWater()
 #  [7, 0, 4, 2, 5, 0, 6, 4, 0, 5] - 25
 #  [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1] - 6
 # print(c.find_trapped_water_solution_1( [7, 0, 4, 2, 5, 0, 6, 4, 0, 5]))
