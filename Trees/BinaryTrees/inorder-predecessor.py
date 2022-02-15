@@ -44,7 +44,7 @@ class BinaryTree:
     #     #check if key is equal to root value
     #     if root.data == key:
     #         if root.right:
-    #             self.findMinimum(root.right)
+    #             return self.findMinimum(root.right)
     #
     #     #if value is less than right
     #     elif key < root.data:

@@ -38,7 +38,7 @@ class BinaryTree:
         #check if key is equal to root value
         if root.data == key:
             if root.right:
-                self.findMinimum(root.right)
+                return self.findMinimum(root.right)
 
         #if value is less than right
         elif key < root.data:
@@ -81,6 +81,6 @@ if __name__ == '__main__':
     for key in keys:
         root = binary_tree.insert_node(root, key)
     binary_tree.inodrer(root)
-    succ = binary_tree.findSuccessor(root, None, 16)
+    succ = binary_tree.findSuccessor(root, None, 15)
     if succ:
         print('succ',succ.data)

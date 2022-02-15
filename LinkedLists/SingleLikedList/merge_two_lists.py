@@ -20,7 +20,9 @@ def printList(msg, head):
 # Takes two lists sorted in increasing order, and merge their nodes
 # together to make one big sorted list which is returned
 def SortedMerge(l1, l2):
-
+	
+	# time complexity is O(l1+l2)or either max(l1,l2)
+	# Space complexity is O(1)
 
     curr = dummy = Node()
     while l1 and l2:
