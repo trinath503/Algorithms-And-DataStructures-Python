@@ -21,9 +21,22 @@ def maxProfit(price):
 			print(f"Buy on day {j + 1} and sell on day {i + 1}")
 
 	return profit
+	"""
+	
+	if not prices:
+		return 0
+
+	maxProfit = 0
+	minPurchase = prices[0]
+	for i in range(1, len(prices)):		
+		maxProfit = max(maxProfit, prices[i] - minPurchase)
+		minPurchase = min(minPurchase, prices[i])
+	return maxProfit
+	"""
 
 
 if __name__ == '__main__':
 
 	price = [1, 5, 2, 3, 7, 6, 4, 5]
 	print("\nTotal profit earned is", maxProfit(price))
+
