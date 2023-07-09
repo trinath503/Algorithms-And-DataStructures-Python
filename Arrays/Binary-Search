@@ -1,0 +1,27 @@
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+# print("Hello world")
+
+
+def binary_search(input_array, target_element):
+    
+    low = 0 
+    high = len(input_array) -1
+    
+    while low <= high:
+        mid = (low+high)//2
+        
+        if input_array[mid] == target_element:
+            return True
+            
+        elif target_element > input_array[mid]:
+            low = mid+1 
+        else:
+            high = mid -1
+            
+    return False
+
+
+input_array = [1,2,3,4,5,6,7]
+target_element = 3 
+print(binary_search(input_array, target_element))
