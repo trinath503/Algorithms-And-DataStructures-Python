@@ -41,7 +41,7 @@ def threeUniqueTriplets(nums, target):
         return result
 
 nums = [1,0,-1, 0,-2, 2,3,4]
-target = 2
+target = 0 # target = 2
 print(threeUniqueTriplets(nums, target))
 
 # solution -2 
