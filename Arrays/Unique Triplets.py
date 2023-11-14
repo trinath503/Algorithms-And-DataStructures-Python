@@ -61,3 +61,57 @@ def Unique_Triplets():
                 if sum(cur_triplet) ==0:
                     all_triplets.append(cur_triplet)
 
+
+
+# quadrapules
+
+def quaduplets(nums, target):
+
+    nums.sort()
+    result = []
+
+    for i in range(len(nums)-3):
+
+        if i >0 and nums[i] == nums[i-1]:
+            continue # skip duplicates
+
+        for j in range(i+1, len(nums)-2):
+
+            if j > i+1 and nums[j] == nums[j-1]:
+                continue # skip duplicates
+
+            left, right = j+1, len(nums)-1
+
+            while left < right:
+
+                curent_sum = nums[i] + nums[j] + nums[left] + nums[right]
+
+                if curent_sum == target:
+                    result.append([nums[i] , nums[j] , nums[left] , nums[right]])
+
+                    while left < right and nums[left] == nums[left+1]:
+                        left += 1  # skip duplicates
+
+                    while left < right and nums[right] == nums[right-1]:
+                        right -=1   # skip duplicates
+
+                    left += 1
+                    right -=1
+
+                elif curent_sum < target:
+                    left +=1
+
+                else:
+                    right -=1
+
+    return result
+
+
+
+
+
+
+
+nums = [1,0,-1, 0,-2, 2,3,4]
+target = 1
+print(quaduplets(nums, target))
