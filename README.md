@@ -1,4 +1,9 @@
-Here is a cleaner and more polished rephrased version:
+# Algorithms & Data Structures (Python)
+
+**Repo navigation:**
+- **[FAANG Interview Structure](FAANG-INTERVIEW-STRUCTURE.md)** — Glance + detailed structure of all top patterns and logics asked at FAANG (topic map, tables, key logic, repo links).
+- **FAANG Patterns – Quick Recognition Guide** (below) — Clue words → pattern; when to use which approach.
+- **`_solution_template.py`** — In each topic folder: code templates for quick reference.
 
 ---
 
